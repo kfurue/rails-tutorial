@@ -19,6 +19,10 @@ gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.4.1'
 gem 'doorkeeper'
 gem 'grape'
+gem 'grape-entity'
+gem 'grape-swagger'
+gem 'grape-swagger-entity'
+gem 'grape-swagger-rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.11'

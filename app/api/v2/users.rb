@@ -2,10 +2,7 @@ require 'doorkeeper/grape/helpers'
 
 module V2
   class Users < Grape::API
-    version 'v2', using: :path
-    format :json
-    prefix :api
-    
+
     helpers Doorkeeper::Grape::Helpers
 
     before do
@@ -13,12 +10,15 @@ module V2
     end
 
     resource :users do
+
+      desc 'Return all users.'
       get do
         User.all
       end
 
+      desc 'Return a user.'
       params do
-        requires :id, type: Integer, desc: 'Status id.'
+        requires :id, type: Integer, desc: 'User id.'
       end
       route_param :id do
         get do

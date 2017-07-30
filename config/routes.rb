@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
-  mount V1::Users => '/'
-  mount V2::Users => '/'
+  mount GrapeSwaggerRails::Engine => '/swagger'
+  mount API::Root => '/'
 end
