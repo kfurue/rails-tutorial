@@ -1,6 +1,15 @@
 require 'doorkeeper/grape/helpers'
 
 module V1
+  module Entities
+    class User < Grape::Entity
+      expose :id, documentation: { type: 'integer', desc: 'User ID.', required: true }
+      expose :name, documentation: { type: 'string', desc: 'User name.', required: true }
+      expose :email, documentation: { type: 'string', desc: 'User email address', required: true }
+    end
+
+  end
+
   class Users < Grape::API
 
     helpers Doorkeeper::Grape::Helpers
@@ -11,9 +20,11 @@ module V1
 
     resource :users do
 
-      desc 'Return all users.'
+      desc 'Return all users.',
+        entity: Entities::User
       get do
-        User.all
+        user = User.all
+        present user, with: Entities::User
       end
 
       desc 'Return a user.'

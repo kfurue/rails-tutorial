@@ -8,6 +8,7 @@ module V1
 
     mount V1::Users
     add_swagger_documentation \
+    doc_version: '0.1.0',
     info: {
       title: "SAMPLE APP",
       description: "This is the sample application for the tutorial.",
