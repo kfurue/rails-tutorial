@@ -11,7 +11,7 @@ module V1
     end
     
     resource :relationships do
-      desc 'Create relationship between user with followed_id.'
+      desc 'Create relationship between user with followed_id.', consumes: [ "application/x-www-form-urlencoded" ]
       params do
         requires :followed_id, type: Integer, desc: 'The ID of the user for whom to be followed.'
       end

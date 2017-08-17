@@ -11,7 +11,7 @@ module V1
     end
 
     resource :microposts do
-      desc 'Create a new micropost.'
+      desc 'Create a new micropost.', consumes: [ "application/x-www-form-urlencoded" ]
       params do
         requires :content, type: String, desc: 'Your micropost.'
       end
