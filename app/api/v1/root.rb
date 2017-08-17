@@ -8,6 +8,7 @@ module V1
 
     mount V1::Users
     mount V1::Microposts
+    mount V1::Feed
     add_swagger_documentation \
     doc_version: '0.1.0',
     info: {
