@@ -11,7 +11,7 @@ module V1
     end
 
     resource :feed do
-      desc 'Return all users.', is_array: true,
+      desc 'Return feed.', is_array: true,
       entity: Entities::Micropost
       get do
         user = User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
