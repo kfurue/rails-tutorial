@@ -7,6 +7,7 @@ module V1
     prefix :api
 
     mount V1::Users
+    mount V1::Microposts
     add_swagger_documentation \
     doc_version: '0.1.0',
     info: {
