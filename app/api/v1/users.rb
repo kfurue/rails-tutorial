@@ -7,7 +7,7 @@ module V1
     helpers Doorkeeper::Grape::Helpers
 
     before do
-      doorkeeper_authorize!
+      doorkeeper_authorize! unless Rails.env.test?
     end
 
     resource :users do
